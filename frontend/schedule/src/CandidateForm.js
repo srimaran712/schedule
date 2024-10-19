@@ -14,7 +14,7 @@ function CandidateForm() {
         e.preventDefault()
 
         try{
-            const response= await axios.post('http://localhost:8080/candidate',{username,email})
+            const response= await axios.post('https://schedule-ctth.onrender.com/candidate',{username,email})
             console.log(response.data)
             setResult(response.data.result)
             toast(response.data.message)
@@ -33,11 +33,11 @@ function CandidateForm() {
     <div className="flex flex-col justify-center items-center">
         <ToastContainer/>
       
-      <form onSubmit={handleSubmit} className="w-1/2 border-2 py-2 px-2 bg-gray-100">
+      <form onSubmit={handleSubmit} className="w-1/2 border-2 py-2 px-2 bg-gray-100 mt-2">
         <label htmlFor="candidate Name" >Candidate Name</label>
-        <input type="text" value={username} onChange={(e)=>setUserName(e.target.value)} className="m-4"/><br/>
+        <input type="text" value={username} onChange={(e)=>setUserName(e.target.value)} className="m-4 w-96 py-2"/><br/>
         <label htmlFor="email">Candidate email</label>
-        <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} className="m-4"/><br/>
+        <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} className="m-4 w-96 py-2"/><br/>
 
         <button type="submit" className="bg-blue-500 text-white text-md font-semibold py-2 px-2">add Candidate</button>
       </form>
