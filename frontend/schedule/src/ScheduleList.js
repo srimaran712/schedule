@@ -27,7 +27,7 @@ function ScheduleList() {
                 <div key={schedule._id} className="shadow-md bg-gray-50 p-2 ">
                    <h2>{schedule.date.toLocaleString()}</h2>
                    <h3>{schedule.timeslot}</h3>
-                  <h5 className="text-md font-bold">{schedule.isBooked ? `Booked by ${schedule.candidateId.name}` : "Available"}</h5>
+                  <h5 className="text-md font-bold">{schedule.isBooked ? `Interview Booked for candidate ${schedule.candidateId.name} and ${schedule.candidateId.email}` : "Available"}</h5>
 
                 </div>
             )

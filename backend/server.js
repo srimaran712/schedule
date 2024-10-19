@@ -76,13 +76,12 @@ app.post('/candidate',async(req,res)=>{
 
 const makeSlot= async(candidateId)=>{
 
-    const findSlot= await scheduleModel.findOne({isBooked:false}).sort('date')
+    const findSlot= await scheduleModel.findOneAndUpdate({isBooked:false},{ isBooked: true, candidateId: candidateId }, // Im about to Update the slot to mark it as booked
+        { sort: { date: 1 }, new: true })
     if(!findSlot){
-        res.status(400).json({message:"no slot found"})
+      return  res.status(400).json({message:"no slot found"})
     }
-    findSlot.isBooked=true;
-    findSlot.candidateId=candidateId
-    await findSlot.save()
+   
 
 
     const findCandidate= await candidateModel.findById(candidateId)
