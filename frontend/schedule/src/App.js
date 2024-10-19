@@ -3,7 +3,7 @@ import ScheduleList from "./ScheduleList";
 
 function App() {
   return (
-    <div>
+    <div className="bg-gray-100">
   <CandidateForm/>
   <ScheduleList/>
     </div>

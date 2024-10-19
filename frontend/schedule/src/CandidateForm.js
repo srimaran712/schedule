@@ -32,6 +32,7 @@ function CandidateForm() {
   return (
     <div className="flex flex-col justify-center items-center">
         <ToastContainer/>
+        <h1 className="text-gray-600 font-bold text-2xl">Scheduling Interview for Candidate form </h1>
       
       <form onSubmit={handleSubmit} className="w-1/2 border-2 py-2 px-2 bg-gray-100 mt-2">
         <label htmlFor="candidate Name" >Candidate Name</label>
